@@ -7,7 +7,11 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-
+npid = require('npid')
+filepath = 'tmp/pids/poteto-bot.pid'
+npid.remove(filepath)
+pid = npid.create(filepath)
+pid.removeOnExit()
 module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
